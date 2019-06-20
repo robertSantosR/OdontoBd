@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10-Jun-2019 às 21:21
--- Versão do servidor: 10.1.37-MariaDB
--- versão do PHP: 7.3.1
+-- Generation Time: 20-Jun-2019 às 03:01
+-- Versão do servidor: 10.1.26-MariaDB
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -49,8 +49,22 @@ INSERT INTO `tb_agendadent` (`id_agenda`, `id_funcionarios`, `data`, `horario`, 
 (59, 7, '2019-06-08', '10:00:00', 1, 5),
 (60, 7, '2019-06-08', '09:20:00', 1, 8),
 (61, 7, '2019-06-08', '11:00:00', 1, 6),
-(62, 7, '2019-06-08', '17:00:00', 2, 6),
-(63, 7, '2019-06-08', '16:20:00', 1, NULL);
+(62, 7, '2019-06-08', '17:00:00', 1, 6),
+(63, 7, '2019-06-08', '16:20:00', 1, 6),
+(64, 6, '2019-06-10', '09:20:00', 1, 10),
+(65, 7, '2019-06-10', '09:20:00', 1, 6),
+(66, 8, '2019-06-10', '09:20:00', 1, 8),
+(67, 6, '2019-06-10', '09:20:00', 1, NULL),
+(68, 7, '2019-06-10', '09:20:00', 1, NULL),
+(69, 8, '2019-06-10', '09:20:00', 2, 6),
+(70, 7, '2019-06-17', '09:20:00', 1, 5),
+(71, 7, '2019-06-18', '09:20:00', 1, NULL),
+(72, 7, '2019-06-19', '09:20:00', 1, 10),
+(73, 8, '2019-06-17', '12:40:00', 1, NULL),
+(74, 7, '2019-06-17', '12:40:00', 1, NULL),
+(75, 6, '2019-06-17', '12:40:00', 2, 17),
+(76, 7, '2019-06-30', '15:20:00', 1, NULL),
+(77, 8, '2019-06-30', '15:20:00', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -87,20 +101,22 @@ CREATE TABLE `tb_funcionarios` (
   `Celular` varchar(15) NOT NULL,
   `RG` varchar(15) NOT NULL,
   `CPF` varchar(15) NOT NULL,
-  `senha` varchar(32) DEFAULT NULL
+  `senha` varchar(32) DEFAULT NULL,
+  `email` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tb_funcionarios`
 --
 
-INSERT INTO `tb_funcionarios` (`id_Funcionarios`, `id_Cargos`, `Funcionario`, `dataNascimento`, `Telefone`, `Celular`, `RG`, `CPF`, `senha`) VALUES
-(3, 1, 'Vagner', '1999-03-09', '1111-1111', '2222-22222', '39.480.087-4', '111.222.333-45', NULL),
-(4, 1, 'robert', '2019-05-17', '41395253', '1194667885', '394800874', '49184667885', '202cb962ac59075b964b07152d234b70'),
-(5, 1, 'robert', '2019-05-17', '41395253', '1194667885', '394800874', '49184667885', '202cb962ac59075b964b07152d234b70'),
-(6, 2, 'robert', '2019-05-08', '41395253', '1194667885', '1234', '49184667885', '202cb962ac59075b964b07152d234b70'),
-(7, 2, 'joseCirurgiao', '2019-05-08', '41395253', '1194667885', '396544896', '48831767885', '202cb962ac59075b964b07152d234b70'),
-(8, 2, 'vagner', '2019-06-24', '1141395253', '11974455879', '354677895', '49887445667', '202cb962ac59075b964b07152d234b70');
+INSERT INTO `tb_funcionarios` (`id_Funcionarios`, `id_Cargos`, `Funcionario`, `dataNascimento`, `Telefone`, `Celular`, `RG`, `CPF`, `senha`, `email`) VALUES
+(3, 1, 'Vagner', '1999-03-09', '1111-1111', '2222-22222', '39.480.087-4', '111.222.333-45', NULL, ''),
+(4, 1, 'robert', '2019-05-17', '41395253', '1194667885', '394800874', '49184667885', '202cb962ac59075b964b07152d234b70', ''),
+(5, 1, 'robert', '2019-05-17', '41395253', '1194667885', '394800874', '49184667885', '202cb962ac59075b964b07152d234b70', ''),
+(6, 2, 'robert', '2019-05-08', '41395253', '1194667885', '1234', '49184667885', '202cb962ac59075b964b07152d234b70', ''),
+(7, 2, 'joseCirurgiao', '2019-05-08', '41395253', '1194667885', '396544896', '48831767885', '202cb962ac59075b964b07152d234b70', ''),
+(8, 2, 'vagner', '2019-06-24', '1141395253', '11974455879', '354677895', '49887445667', '202cb962ac59075b964b07152d234b70', ''),
+(9, 1, 'robert', '0000-00-00', '41395253', '974402161', '394588469', '49184667885', '202cb962ac59075b964b07152d234b70', 'robertadm@hotmail.com');
 
 -- --------------------------------------------------------
 
@@ -119,24 +135,24 @@ CREATE TABLE `tb_usuario` (
   `numero` varchar(100) NOT NULL,
   `complemento` varchar(100) NOT NULL,
   `cpf` varchar(15) NOT NULL,
-  `senha` varchar(32) NOT NULL
+  `senha` varchar(32) NOT NULL,
+  `data_nascimento` date NOT NULL,
+  `bairro` varchar(50) NOT NULL,
+  `cidade` varchar(50) NOT NULL,
+  `sexo` char(1) NOT NULL,
+  `estado` char(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tb_usuario`
 --
 
-INSERT INTO `tb_usuario` (`id_Usuario`, `paciente`, `Email`, `Telefone`, `Celular`, `endereco`, `cep`, `numero`, `complemento`, `cpf`, `senha`) VALUES
-(1, 'dd', 'erew', '112314', '1147013758', 'rua helena', '06767390 ', 'dsf', '11645', '39166978890', ''),
-(2, 'a', 'a', '112314', '', '', ' ', '', '', '', ''),
-(3, 'a', 'b@ocm.c', '112314', '', '', ' ', '', '', '', ''),
-(4, 'a', 'ab@ab.com', '112314', '', '', ' ', '', '', '', ''),
-(5, 'elias', 'elias@hotmail.com', '', '', '', '', '', '', '', '202cb962ac59075b964b07152d234b70'),
-(6, 'robert', 'robert@hotmail.com', '112314', '1194667885', 'rua ananias carmerindo pires', '06785100 ', '405', 'c2', '49184667885', '202cb962ac59075b964b07152d234b70'),
-(7, 'vagner', 'vagner@hotmail.com', '112314', '1194667885', 'rua ananias carmerindo pires', '06785100 ', '405', 'c2', '49184667885', ''),
-(8, 'robert', 'robert@hotmail.com', '112314', '1194667885', 'rua ananias carmerindo pires', '06785100 ', '405', 'c2', '49184667885', ''),
-(9, '', '', '', '', '', '', '', '', '', '202cb962ac59075b964b07152d234b70'),
-(10, 'vagner', 'vagner@hotmail.com', '112314', '11974455879', 'jd senac', '06785125 ', '403', 'c2', '49887445667', '202cb962ac59075b964b07152d234b70');
+INSERT INTO `tb_usuario` (`id_Usuario`, `paciente`, `Email`, `Telefone`, `Celular`, `endereco`, `cep`, `numero`, `complemento`, `cpf`, `senha`, `data_nascimento`, `bairro`, `cidade`, `sexo`, `estado`) VALUES
+(5, 'elias', 'elias@hotmail.com', '112314', '1194667885', 'rua ananias carmerindo pires', ' 06785100 ', '405', ' c2', '', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'jd_panorama', 'taboão da serra', 'm', 'CE'),
+(6, 'Robert santos', 'robert@hotmail.com', '112314', '1194667885', 'rua ananias carmerindo pires', '  06785100 ', '405', '  c2', '49184667885', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'jd_panorama', 'taboão da serra', 'm', 'CE'),
+(8, 'robert santos dos re', 'robert@hotmail.com', '112314', '1194667885', 'rua ananias carmerindo pires', ' 06785100 ', '405', ' c2', '49184667885', '', '0000-00-00', 'jd_panorama', 'taboão da serra', 'm', 'CE'),
+(10, '', '', '', '', '', ' 06785100 ', '405', ' ', '', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'jd_panorama', '', '', ''),
+(17, 'luis', 'luis@teste.com', '(11) 11111111', '(11) 111111111', '', '', '', '', '111.111.111-11', '3978da5adde4e4ce8f9fe1d45649761f', '2019-06-19', '', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -177,7 +193,7 @@ ALTER TABLE `tb_usuario`
 -- AUTO_INCREMENT for table `tb_agendadent`
 --
 ALTER TABLE `tb_agendadent`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `tb_cargos`
@@ -189,13 +205,13 @@ ALTER TABLE `tb_cargos`
 -- AUTO_INCREMENT for table `tb_funcionarios`
 --
 ALTER TABLE `tb_funcionarios`
-  MODIFY `id_Funcionarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_Funcionarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
