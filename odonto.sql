@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Jun-2019 às 03:01
+-- Generation Time: 02-Jul-2019 às 03:24
 -- Versão do servidor: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -56,15 +56,19 @@ INSERT INTO `tb_agendadent` (`id_agenda`, `id_funcionarios`, `data`, `horario`, 
 (66, 8, '2019-06-10', '09:20:00', 1, 8),
 (67, 6, '2019-06-10', '09:20:00', 1, NULL),
 (68, 7, '2019-06-10', '09:20:00', 1, NULL),
-(69, 8, '2019-06-10', '09:20:00', 2, 6),
+(69, 8, '2019-06-10', '09:20:00', 1, NULL),
 (70, 7, '2019-06-17', '09:20:00', 1, 5),
 (71, 7, '2019-06-18', '09:20:00', 1, NULL),
 (72, 7, '2019-06-19', '09:20:00', 1, 10),
 (73, 8, '2019-06-17', '12:40:00', 1, NULL),
 (74, 7, '2019-06-17', '12:40:00', 1, NULL),
-(75, 6, '2019-06-17', '12:40:00', 2, 17),
+(75, 6, '2019-06-17', '12:40:00', 1, 17),
 (76, 7, '2019-06-30', '15:20:00', 1, NULL),
-(77, 8, '2019-06-30', '15:20:00', 1, NULL);
+(77, 8, '2019-06-30', '15:20:00', 1, 21),
+(78, 7, '2019-06-26', '09:20:00', 1, NULL),
+(79, 8, '2019-06-26', '09:20:00', 1, NULL),
+(80, 8, '2019-06-27', '12:00:00', 1, NULL),
+(81, 7, '2019-06-27', '14:00:00', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -140,19 +144,28 @@ CREATE TABLE `tb_usuario` (
   `bairro` varchar(50) NOT NULL,
   `cidade` varchar(50) NOT NULL,
   `sexo` char(1) NOT NULL,
-  `estado` char(2) NOT NULL
+  `estado` char(2) NOT NULL,
+  `token` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tb_usuario`
 --
 
-INSERT INTO `tb_usuario` (`id_Usuario`, `paciente`, `Email`, `Telefone`, `Celular`, `endereco`, `cep`, `numero`, `complemento`, `cpf`, `senha`, `data_nascimento`, `bairro`, `cidade`, `sexo`, `estado`) VALUES
-(5, 'elias', 'elias@hotmail.com', '112314', '1194667885', 'rua ananias carmerindo pires', ' 06785100 ', '405', ' c2', '', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'jd_panorama', 'taboão da serra', 'm', 'CE'),
-(6, 'Robert santos', 'robert@hotmail.com', '112314', '1194667885', 'rua ananias carmerindo pires', '  06785100 ', '405', '  c2', '49184667885', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'jd_panorama', 'taboão da serra', 'm', 'CE'),
-(8, 'robert santos dos re', 'robert@hotmail.com', '112314', '1194667885', 'rua ananias carmerindo pires', ' 06785100 ', '405', ' c2', '49184667885', '', '0000-00-00', 'jd_panorama', 'taboão da serra', 'm', 'CE'),
-(10, '', '', '', '', '', ' 06785100 ', '405', ' ', '', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'jd_panorama', '', '', ''),
-(17, 'luis', 'luis@teste.com', '(11) 11111111', '(11) 111111111', '', '', '', '', '111.111.111-11', '3978da5adde4e4ce8f9fe1d45649761f', '2019-06-19', '', '', '', '');
+INSERT INTO `tb_usuario` (`id_Usuario`, `paciente`, `Email`, `Telefone`, `Celular`, `endereco`, `cep`, `numero`, `complemento`, `cpf`, `senha`, `data_nascimento`, `bairro`, `cidade`, `sexo`, `estado`, `token`) VALUES
+(5, 'elias', 'elias@hotmail.com', '112314', '1194667885', 'rua ananias carmerindo pires', ' 06785100 ', '405', ' c2', '', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'jd_panorama', 'taboão da serra', 'm', 'CE', ''),
+(6, 'Robert santos', 'robert@hotmail.com', '112314', '1194667885', 'rua ananias carmerindo pires', '     06785100 ', '405', '     c2', '49184667885', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'jd_panorama', 'taboão da serra', 'm', 'SP', ''),
+(8, 'robert santos dos re', 'robert@hotmail.com', '112314', '1194667885', 'rua ananias carmerindo pires', ' 06785100 ', '405', ' c2', '49184667885', '', '0000-00-00', 'jd_panorama', 'taboão da serra', 'm', 'CE', ''),
+(10, '', '', '', '', '', ' 06785100 ', '405', ' ', '', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'jd_panorama', '', '', '', ''),
+(17, 'luis', 'luis@teste.com', '(11) 11111111', '(11) 111111111', '', '', '', '', '111.111.111-11', '3978da5adde4e4ce8f9fe1d45649761f', '2019-06-19', '', '', '', '', ''),
+(18, 'usuario teste', 'usuario@teste.com', '(11) 11111111', '(11) 111111111', '', '', '', '', '111.111.111-11', '202cb962ac59075b964b07152d234b70', '2019-06-26', '', '', '', '', ''),
+(19, 'usuario2', 'usario2@teste.com', '112314', '(15) 145451584', 'jd panora', '06785-100 ', '1111', 'c12', '111.111.111-11', '202cb962ac59075b964b07152d234b70', '0000-00-00', '', '', '', '', ''),
+(20, 'vagenerTeste', 'vagen123@hotmail.com', '(11) 11111111', '(11) 111111111', '', '', '', '', '391.669.788-90', '202cb962ac59075b964b07152d234b70', '1989-10-16', '', '', '', '', ''),
+(21, 'teste', 'teste123@hotmail.com', '(11) 11111111', '(11) 111111111', '', '', '', '', '111.111.111-11', 'caf1a3dfb505ffed0d024130f58c5cfa', '1111-11-11', '', '', '', '', ''),
+(22, 'testador', 'robert1@hotmail.com', '(31) 23213213', '(13) 123123232', 'jose damiao', '06785-100', '400', 'c12', '491.846.678-85', '202cb962ac59075b964b07152d234b70', '1999-03-09', 'Jardim Panorama', 'taboao', 'm', 'SP', ''),
+(23, 'robert santos dos re', 'robert-santosrrsasd@hotma', '(13) 12321322', '(32) 652222222', 'jose damiao', '06785-100', '400', 'x3', '491.846.678-85', '202cb962ac59075b964b07152d234b70', '1999-03-09', '22222222222222222', 'taboao', 'm', 'RN', ''),
+(24, 'robert santos dos re', 'teste17@teste.com', '(11) 54222222', '(15) 145451584', 'jose damiao', '06785-100', '400', 'x3', '455.467.845-12', '202cb962ac59075b964b07152d234b70', '1999-03-09', 'Jardim Panorama', 'taboao', 'f', 'PE', ''),
+(25, 'robert santos dos re', 'teste20@teste.com', '(11) 54222222', '(15) 145451584', 'jose damiao', '06785-100', '400', 'x3', '455.467.845-20', '202cb962ac59075b964b07152d234b70', '1999-03-09', 'Jardim Panorama', 'taboao', 'f', 'PE', '');
 
 --
 -- Indexes for dumped tables
@@ -193,7 +206,7 @@ ALTER TABLE `tb_usuario`
 -- AUTO_INCREMENT for table `tb_agendadent`
 --
 ALTER TABLE `tb_agendadent`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `tb_cargos`
@@ -211,7 +224,7 @@ ALTER TABLE `tb_funcionarios`
 -- AUTO_INCREMENT for table `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables
