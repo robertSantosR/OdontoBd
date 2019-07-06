@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Jul-2019 às 03:15
+-- Generation Time: 06-Jul-2019 às 03:26
 -- Versão do servidor: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -50,9 +50,10 @@ INSERT INTO `tb_agendadent` (`id_agenda`, `id_funcionarios`, `data`, `horario`, 
 (88, 7, '2019-07-03', '10:40:00', 2, 64),
 (89, 8, '2019-07-17', '11:20:00', 3, 45),
 (90, 6, '2019-07-11', '09:40:00', 1, NULL),
-(91, 7, '2019-07-11', '09:40:00', 1, NULL),
+(91, 7, '2019-07-11', '09:40:00', 3, 91),
 (92, 8, '2019-07-11', '09:40:00', 1, NULL),
-(93, 10, '2019-07-11', '09:40:00', 2, 85);
+(93, 10, '2019-07-11', '09:40:00', 2, 85),
+(94, 7, '2019-07-05', '10:20:00', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -139,8 +140,8 @@ CREATE TABLE `tb_usuario` (
 
 INSERT INTO `tb_usuario` (`id_Usuario`, `paciente`, `Email`, `Telefone`, `Celular`, `endereco`, `cep`, `numero`, `complemento`, `cpf`, `senha`, `data_nascimento`, `bairro`, `cidade`, `sexo`, `estado`, `token`) VALUES
 (5, 'elias', 'elias@hotmail.c', '112314', '1194667885', 'rua ananias carmerindo pires', ' 06785100 ', '405', ' c2', '', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'jd_panorama', 'taboão da serra', 'm', 'CE', ''),
-(6, 'Robert santos santos', 'robert@hotmail.', '112314', '1194667885', 'Rua Ananias Carmerindo Pires', ' 06785-100', '405', '        c2', '49184667885', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'Jardim Panorama', 'Taboão da Serra', 'm', 'SP', ''),
-(8, 'robert santos dos re', 'robert@hotmail.', '112314', '1194667885', 'rua ananias carmerindo pires', ' 06785100 ', '405', ' c2', '49184667885', '', '0000-00-00', 'jd_panorama', 'taboão da serra', 'm', 'CE', ''),
+(6, 'Robert santos santos', 'robert@hotmail.', '112314', '1194667885', 'Rua Ananias Carmerindo Pires', ' 06785-100', '405', '        c2', '1111111111111', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'Jardim Panorama', 'Taboão da Serra', 'm', 'SP', ''),
+(8, 'robert santos dos re', 'robert@hotmail.', '112314', '1194667885', 'rua ananias carmerindo pires', ' 06785100 ', '405', ' c2', '1111111111111', '', '0000-00-00', 'jd_panorama', 'taboão da serra', 'm', 'CE', ''),
 (10, 'testre', 'teste@123.com', '', '', '', ' 06785100 ', '405', ' ', '', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'jd_panorama', '', '', '', ''),
 (17, 'luis', 'luis@teste.com', '(11) 11111111', '(11) 111111111', '', '', '', '', '111.111.111-11', '3978da5adde4e4ce8f9fe1d45649761f', '2019-06-19', '', '', '', '', ''),
 (18, 'usuario teste', 'usuario@teste.c', '(11) 11111111', '(11) 111111111', '', '', '', '', '111.111.111-11', '202cb962ac59075b964b07152d234b70', '2019-06-26', '', '', '', '', ''),
@@ -164,7 +165,7 @@ INSERT INTO `tb_usuario` (`id_Usuario`, `paciente`, `Email`, `Telefone`, `Celula
 (36, 'luciana', 'lucyana_matos@h', '', '(11) 111111111', 'Rua Felisbela Oliveira Ferreira Missumos', '06773-030', '0000', 'casa', '000.000.000-00', 'e0df8d0038ecb2106799423410c2a4c1', '1984-10-29', 'Parque São Joaquim', 'Taboão da Serra', 'f', 'SP', ''),
 (37, 'Eloisa Estevão', 'eloisa.jestevao', '(11) 95196342', '(11) 993789162', 'Rua Brasil', '06813-085', '34', 'a', '446.328.974-58', '473e82435f22511361b41007246d714c', '1996-05-10', 'Jardim Valo Verde', 'Embu das Artes', 'f', 'SP', ''),
 (38, 'Brunão', 'brunasenac@gmai', '(11) 98745454', '(11) 987546446', 'Rua Isabel Soria Mainardes', ' 06787-110', '22', '  casa', '123.456.789-10', 'f11fb42c501fe16b20622205335e7bb9', '1976-10-10', 'Jardim Maria Helena', 'Taboão da Serra', 'm', 'SP', ''),
-(39, 'paloma p silva', 'loma765890@gmai', '(32) 03255555', '(25) 555555555', 'Rua Santa Rita', '06843-220', '25', 'coaosa', '248.995.226-85', '9d85cd8bf53996df44dddb9a988da293', '2001-04-20', 'Maria Auxiliadora', 'Embu das Artes', 'm', 'SP', ''),
+(39, 'paloma p silva', 'loma765890@gmail.com', '(32) 03255555', '(25) 555555555', 'Rua Santa Rita', '06843-220', '25', 'coaosa', '248.995.226-85', '9d85cd8bf53996df44dddb9a988da293', '2001-04-20', 'Maria Auxiliadora', 'Embu das Artes', 'm', 'SP', '1eadfedb3e5e82b768fa322e1c484a94'),
 (40, 'Jorge', 'juniorsystem597', '(11) 99444517', '(11) 984459716', 'Rua Izaura da Silva Camargo', ' 06767-310', '82', ' 12', '176.247.154-21', '1f579f72a6a8ce1033afca7c94c132b0', '1989-10-16', 'Jardim São Paulo', 'Taboão da Serra', 'm', 'SP', ''),
 (41, 'Gustavo', 'olivera.gustavo', '(55) 4465416', '(22) 851354452', 'Rua Jurandir Cabelho', '06774-070', '401', '2', '561.614.656', 'b504446d28ecd0baa21371ead11a5647', '1974-07-25', 'Parque Jacarandá', 'Taboão da Serra', 'm', 'SP', ''),
 (42, 'Dani ', 'felipe.souza@ho', '(11) 95572573', '(11) 648748948', 'Rua Guaramembé', '05754-060', '000', 'sdfgrdb', '876.876.864-57', '642d60c6062c7fcaed270ebf5bdf0c6a', '2014-11-20', 'Umarizal', 'São Paulo', 'f', 'SP', ''),
@@ -215,7 +216,23 @@ INSERT INTO `tb_usuario` (`id_Usuario`, `paciente`, `Email`, `Telefone`, `Celula
 (87, '12544', '556DS1A68@66.CO', '(23) 12312311', '(31) 231231232', 'Rua Ananias Carmerindo Pires', '06785-100', '123', '123', '158.889.795-48', '202cb962ac59075b964b07152d234b70', '1111-11-11', 'Jardim Panorama', 'Taboão da Serra', 'm', 'SP', ''),
 (88, '44444', '44564@445698.CO', '(11) 11111111', '(11) 111111111', 'Rua Ananias Carmerindo Pires', '06785-100', '1111', '11111', '487.895.628-79', '202cb962ac59075b964b07152d234b70', '1111-11-11', 'Jardim Panorama', 'Taboão da Serra', 'f', 'SP', ''),
 (89, '123', '363@3.com', '(11) 11111111', '(11) 111111111', 'Rua Ananias Carmerindo Pires', '06785-100', '111', '1111', '154.878.778-87', '202cb962ac59075b964b07152d234b70', '1111-11-11', 'Jardim Panorama', 'Taboão da Serra', 'm', 'SP', ''),
-(90, 'elias', 'eliasteste@teste.com', '(11) 11111111', '(11) 111111111', 'Rua Sérgio Cardoso', '06785-110', '12', '121', '554.411.223-32', '202cb962ac59075b964b07152d234b70', '2019-07-04', 'Jardim Santo Onofre', 'Taboão da Serra', 'm', 'SP', '');
+(90, 'elias', 'eliasteste@teste.com', '(11) 11111111', '(11) 111111111', 'Rua Sérgio Cardoso', '06785-110', '12', '121', '554.411.223-32', '202cb962ac59075b964b07152d234b70', '2019-07-04', 'Jardim Santo Onofre', 'Taboão da Serra', 'm', 'SP', ''),
+(91, 'robert santos ', 'robertsantosrrs@gmail.com', '(11) 11111111', '(11) 111111111', 'Rua Ananias Carmerindo Pires', '06785-100', '405', 'c2', '111.111.222-33', '202cb962ac59075b964b07152d234b70', '1999-03-09', 'Jardim Panorama', 'Taboão da Serra', 'm', 'SP', ''),
+(92, 'Elias Abner', 'elias.abner.bonilha@gmail.com', '(11) 11111111', '(11) 111111111', 'Rua Helena Moraes de Oliveira', ' 06767-390', '1', ' 12', '391.669.788-87', '827ccb0eea8a706c4c34a16891f84e7b', '1989-10-16', 'Parque Pinheiros', 'Taboão da Serra', 'm', 'SP', ''),
+(93, 'robert', 'robert-santosrrs@hotmail.com', '(11) 11111111', '(11) 111111111', 'Rua Ananias Carmerindo Pires', '06785-100', '405', 'c2', '112.233.114-45', '202cb962ac59075b964b07152d234b70', '1999-03-09', 'Jardim Panorama', 'Taboão da Serra', 'm', 'SP', '7603f399a5305c6b355c0be67ff88320'),
+(94, 'teste', 'teste155@teste.com', '112314', 'r23442342342343', '', '06785-100 ', 'n3', 'c2', '424.344.657-27', '202cb962ac59075b964b07152d234b70', '0000-00-00', '', '', 'm', '', ''),
+(95, 'teste', 'teste155@teste.com', '112314', 'r23442342342343', '', '06785-100 ', 'n3', 'c2', '424.344.657-27', '202cb962ac59075b964b07152d234b70', '0000-00-00', '', '', 'm', '', ''),
+(96, 'TESTE1213', 'teste17@teste.com', '112314', '234234234324', '', '06785-100 ', '1111', 'C3', '134.355.623-42', '202cb962ac59075b964b07152d234b70', '0000-00-00', '', '', 'm', '', ''),
+(97, 'TESTE1213', 'teste17@teste.com', '112314', '234234234324', '', '06785-100 ', '1111', 'C3', '134.355.623-42', '202cb962ac59075b964b07152d234b70', '0000-00-00', '', '', 'm', '', ''),
+(98, '123123123', 'robertadm@hotmail.com', '112314', '123123213231', '', '06785-100 ', '123', '123', '443.846.678-23', '202cb962ac59075b964b07152d234b70', '0000-00-00', '', '', 'm', '', ''),
+(99, '121312321321', 'robertadm@hotmail.com', '112314', '12312312312312', '', '23423-423 ', '213123', '123123213', '123.232.113-21', '202cb962ac59075b964b07152d234b70', '0000-00-00', '', '', 'm', 'SP', ''),
+(100, 'Masculino', 'robert@hotmail.com', '112314', '', '', '06785-100 ', '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', '0000-00-00', '', '', 'm', '', ''),
+(101, 'Masculino', 'robert@hotmail.com', '112314', '', '', '06785-100 ', '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', '0000-00-00', '', '', 'm', '', ''),
+(102, 'Masculino', 'robert@hotmail.com334', '112314', '', 'Jardim Panorama', '06785-100 ', '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', '0000-00-00', '', 'Taboão da Serra', 'm', 'SP', ''),
+(103, 'Masculino', 'robert@hotmail.com', '112314', '12312312312312', 'Rua Ananias Carmerindo Pires', '06785-100 ', '1231231312312', '123123', '123.431.242-34', '81dc9bdb52d04dc20036dbd8313ed055', '0000-00-00', 'Jardim Panorama', 'Taboão da Serra', 'm', 'SP', ''),
+(104, 'testesist', 'teste@1234.com', '112314', '(11) 111111111', 'Rua Ananias Carmerindo Pires', '06785-100 ', 'n3', 'c2', '491.846.678-85', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'Jardim Panorama', 'Taboão da Serra', 'm', 'SP', ''),
+(105, 'testesist', 'teste@1234.com', '', '(11) 111111111', 'Rua Ananias Carmerindo Pires', '06785-100 ', 'n3', 'c2', '491.846.678-85', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'Jardim Panorama', 'Taboão da Serra', 'm', 'SP', ''),
+(106, 'testesist', 'teste@1234.com', '', '(11) 111111111', 'Rua Ananias Carmerindo Pires', '06785-100 ', 'n3', 'c2', '491.846.678-85', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'Jardim Panorama', 'Taboão da Serra', 'm', 'SP', '');
 
 --
 -- Indexes for dumped tables
@@ -256,7 +273,7 @@ ALTER TABLE `tb_usuario`
 -- AUTO_INCREMENT for table `tb_agendadent`
 --
 ALTER TABLE `tb_agendadent`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT for table `tb_cargos`
@@ -274,7 +291,7 @@ ALTER TABLE `tb_funcionarios`
 -- AUTO_INCREMENT for table `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- Constraints for dumped tables
